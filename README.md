@@ -29,6 +29,11 @@ Run the following command to run startup migrations.
 adonis migration:run
 ```
 
+Make migrations file
+```bash
+adonis make:migration followers
+```
+
 ## Model
 
 Make model and migration file
@@ -37,4 +42,12 @@ Make model and migration file
 adonis make:model Tweet -m
 adonis make:model Reply -m
 adonis make:model Favorite -m
+```
+
+## Controller
+
+Make HttpController
+
+```bash
+adonis make:controller User --type=http
 ```

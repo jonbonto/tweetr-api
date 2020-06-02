@@ -22,3 +22,10 @@ Route.get('/', () => {
 
 Route.post('/signup', 'UserController.signup')
 Route.post('/login', 'UserController.login')
+
+Route.group(() => {
+  Route.get('/me', 'UserController.me')
+  Route.put('/update_profile', 'UserController.updateProfile')
+})
+  .prefix('account')
+  .middleware(['auth:jwt'])

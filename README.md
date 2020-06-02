@@ -21,6 +21,8 @@ or manually clone the repo and then run `npm install`.
 
 ### Migrations
 
+Make sure that your .env is correctly set .
+
 Run the following command to run startup migrations.
 
 ```js

@@ -28,3 +28,13 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+
+## Model
+
+Make model and migration file
+
+```bash
+adonis make:model Tweet -m
+adonis make:model Reply -m
+adonis make:model Favorite -m
+```

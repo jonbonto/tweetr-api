@@ -4,6 +4,9 @@
 const Model = use('Model')
 
 class Tweet extends Model {
+  user () {
+    this.belongsTo('App/Models/User')
+  }
 }
 
 module.exports = Tweet

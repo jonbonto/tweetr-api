@@ -35,9 +35,26 @@ class User extends Model {
     return this.hasMany('App/Models/Token')
   }
 
-  tweets() {
+  tweets () {
     return this.hasMany('App/Models/Tweet')
   }
+
+  followers () {
+    return this.belongsToMany(
+      'App/Models/User',
+      'user_id',
+      'follower_id',
+    ).pivotTable('followers')
+  }
+
+  following () {
+    return this.belongsToMany(
+      'App/Models/User',
+      'follower_id',
+      'user_id',
+    ).pivotTable('followers')
+  }
+
 }
 
 module.exports = User

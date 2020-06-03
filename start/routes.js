@@ -38,3 +38,5 @@ Route.group(() => {
 })
   .prefix('users')
   .middleware(['auth:jwt'])
+
+Route.post('/follow/:id', 'UserController.follow').middleware(['auth:jwt'])

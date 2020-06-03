@@ -29,3 +29,5 @@ Route.group(() => {
 })
   .prefix('account')
   .middleware(['auth:jwt'])
+
+Route.put('/change_password', 'UserController.changePassword').middleware(['auth:jwt']);

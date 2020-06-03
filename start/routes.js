@@ -43,5 +43,6 @@ Route.group(() => {
   .middleware(['auth:jwt'])
 
 Route.post('/tweet', 'TweetController.tweet').middleware(['auth:jwt'])
+Route.get('/tweets/:id', 'TweetController.show')
 
 

@@ -177,12 +177,25 @@ class UserController {
     })
   }
 
-  async follow({ request, auth, response }) {
+  async follow({ params, auth, response }) {
     // get currently authenticated user
     const user = auth.current.user
 
     // add to user's followers
-    await user.following().attach(request.input('user_id'))
+    await user.following().attach(params.id)
+
+    return response.json({
+      status: 'success',
+      data: null
+    })
+  }
+
+  async unFollow({ params, auth, response }) {
+    // get currently authenticated user
+    const user = auth.current.user
+
+    // remove from user's followers
+    await user.following().detach(params.id)
 
     return response.json({
       status: 'success',

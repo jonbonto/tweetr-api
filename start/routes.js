@@ -26,17 +26,19 @@ Route.post('/login', 'UserController.login')
 Route.group(() => {
   Route.get('/me', 'UserController.me')
   Route.put('/update_profile', 'UserController.updateProfile')
+  Route.put('/change_password', 'UserController.changePassword')
 })
   .prefix('account')
   .middleware(['auth:jwt'])
 
-Route.put('/change_password', 'UserController.changePassword').middleware(['auth:jwt']);
 Route.get(':username', 'UserController.showProfile');
 
 Route.group(() => {
   Route.get('/users_to_follow', 'UserController.usersToFollow');
+  Route.post('/follow/:id', 'UserController.follow')
+  Route.delete('/unfollow/:id', 'UserController.unFollow')
 })
   .prefix('users')
   .middleware(['auth:jwt'])
 
-Route.post('/follow/:id', 'UserController.follow').middleware(['auth:jwt'])
+

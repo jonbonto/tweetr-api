@@ -1,5 +1,7 @@
 # Adonis API application
 
+This project is the API part of following this course https://scotch.io/courses/build-a-twitter-clone-with-adonis-and-vue
+
 This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
 
 1. Bodyparser
